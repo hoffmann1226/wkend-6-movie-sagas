@@ -12,10 +12,10 @@ CREATE TABLE "genres" (
 );
 
 --table for joins
-CREATE TABLE "movie_genre" (
+CREATE TABLE "movies_genres" (
   "id" SERIAL PRIMARY KEY,
-  "movie_id" INT REFERENCES "movies" NOT NULL,
-  "genre_id" INT REFERENCES "genres" NOT NULL
+  "movies_id" INT REFERENCES "movies" NOT NULL,
+  "genres_id" INT REFERENCES "genres" NOT NULL
 );
 
 
