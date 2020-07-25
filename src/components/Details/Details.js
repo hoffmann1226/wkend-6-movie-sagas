@@ -22,10 +22,10 @@ goEdit = () => {
        {this.props.reduxState.detailsReducer.map(movie => {
           return (
             <div key={movie.id}>
-              <p>{movie.title}</p>
+              <h1>{movie.title}</h1>
+              <p>Genres: {movie.genre_list}</p>
               <img src={movie.poster} alt="movie" onClick={()=>this.handleClick(movie.id)}/>
               <p>{movie.description}</p>
-              <p>Genres: {movie.genre_list}</p>
             </div>
           )
         })}
