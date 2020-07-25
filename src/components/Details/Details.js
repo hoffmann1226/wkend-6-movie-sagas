@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 class Details extends Component {
 
-  goBack = () => {
+goBack = () => {
     // console.log('handleClick Back To List')
     this.props.history.push('/');
 }
@@ -18,9 +18,16 @@ goEdit = () => {
       <div>
        <button onClick={this.goBack}>Back to List</button>
        <button onClick={this.goEdit}>Edit</button>
+       {JSON.stringify (this.props.reduxState.detailsReducer)}
       </div>
     );
   }
 }
 
-export default connect()(Details);
+const mapStateToProps = reduxState => {
+  return {
+      reduxState
+  };
+};
+
+export default connect(mapStateToProps)(Details);
