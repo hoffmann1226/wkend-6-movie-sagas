@@ -8,6 +8,14 @@ class Home extends Component {
   this.props.dispatch({type: 'GET_MOVIES'})
   }
 
+  handleClick = (id) => {
+    console.log('click works')
+    // dispatch id to saga to get movie details from server
+    this.props.dispatch({type: 'SET_DETAILS', payload: id})
+    console.log('get details dispatch working')
+    this.props.history.push('/details');
+  }
+
   render() {
     return (
       <div>
@@ -16,7 +24,7 @@ class Home extends Component {
           return (
             <div key={movie.id}>
               <p>{movie.title}</p>
-              <img src={movie.poster} alt="movie image" onClick={()=>this.handleClick(movie.id)}/>
+              <img src={movie.poster} alt="movie" onClick={()=>this.handleClick(movie.id)}/>
               <p>{movie.description}</p>
             </div>
           )
