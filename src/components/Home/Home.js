@@ -11,8 +11,7 @@ class Home extends Component {
   handleClick = (id) => {
     console.log('click works')
     // dispatch id to saga to get movie details from server
-    this.props.dispatch({type: 'SET_DETAILS', payload: id})
-    console.log('get details dispatch working')
+    this.props.dispatch({type: 'GET_DETAILS', payload: id})
     this.props.history.push('/details');
   }
 

@@ -15,6 +15,7 @@ import axios from 'axios';
 // Create the rootSaga generator function
 function* rootSaga() {
     yield takeEvery('GET_MOVIES', getMovies)
+    yield takeEvery('GET_DETAILS', getDetails)
 }
 
 //create getMovies saga to initialize get request using axios
@@ -26,6 +27,20 @@ function* getMovies() {
         //trigger and store response data in SET_MOVIES reducer
         yield put({
             type: 'SET_MOVIES',
+            payload: response.data
+        })
+    } catch(error) {
+        console.log('problem with get saga', error)
+    }
+}
+
+function* getDetails(action) {
+    try{
+        //get movie data from database
+        let response = yield axios.get('/movies/' + action.payload)
+        //trigger and store response data in SET_DETAILS
+        yield put({
+            type: 'SET_DETAILS',
             payload: response.data
         })
     } catch(error) {
