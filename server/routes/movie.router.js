@@ -29,4 +29,15 @@ router.get('/', (req, res) => {
     })
 })
 
+// PUT call to change movie title and description
+router.put('/', (req, res) => {
+  let queryText = `UPDATE "movies" SET "title" = $1, "description" = $2 WHERE "id" = $3;`;
+  pool.query(queryText, [req.body.title, req.body.description, req.body.id])
+      .then(response => {
+          res.sendStatus(200);
+      }).catch((error) => {
+          res.sendStatus(500);
+      })
+})
+
   module.exports = router;

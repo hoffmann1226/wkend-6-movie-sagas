@@ -16,6 +16,7 @@ import axios from 'axios';
 function* rootSaga() {
     yield takeEvery('GET_MOVIES', getMovies)
     yield takeEvery('GET_DETAILS', getDetails)
+    yield takeEvery('UPDATE_MOVIE', updateMovie)
 }
 
 //create getMovies saga to initialize get request using axios
@@ -48,6 +49,17 @@ function* getDetails(action) {
     }
 }
 
+// put call to update movie and description
+function* updateMovie(action) {
+    try {
+        console.log(action.payload);
+        let movie = action.payload;
+        yield axios.put('/movies', movie)
+        yield getDetails();
+    } catch (error) {
+        console.log('error in update', error);
+    }
+}
 
 
 // Create sagaMiddleware
