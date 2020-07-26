@@ -45,7 +45,7 @@ function* getDetails(action) {
             payload: response.data
         })
     } catch(error) {
-        console.log('problem with get saga', error)
+        console.log('problem with get details saga', error)
     }
 }
 
