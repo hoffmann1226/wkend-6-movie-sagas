@@ -11,8 +11,12 @@ class Edit extends Component {
     return (
       <div>
        <p>Edit Movie Details</p>
+       <div>
        <input placeholder="new title"></input>
-       <input placeholder="new description"></input>
+       </div>
+       <div>
+       <textarea placeholder="new description"></textarea>
+       </div>
        <button onClick={this.goBack}>Cancel</button>
        <button onClick={this.saveChanges}>Save</button>
       </div>
