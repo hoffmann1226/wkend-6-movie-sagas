@@ -12,6 +12,7 @@ class Edit extends Component {
     },
 }
 
+
    // set local state when inputs are entered
    handleChange = (event, input) => {
     this.setState({

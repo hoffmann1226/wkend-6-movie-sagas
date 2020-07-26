@@ -8,9 +8,8 @@ goBack = () => {
     this.props.history.push('/');
 }
 
-goEdit = () => {
-  // console.log('handleClick Back To List')
-  this.props.history.push('/edit');
+goEdit = (id) => {
+  this.props.history.push(`/edit/` + id)
 }
 
   render() {
@@ -24,7 +23,7 @@ goEdit = () => {
             <div key={movie.id}>
               <h1>{movie.title}</h1>
               <p>Genres: {movie.genre_list}</p>
-              <img src={movie.poster} alt="movie" onClick={()=>this.handleClick(movie.id)}/>
+              <img src={movie.poster} alt="movie" onClick={()=>this.goEdit(movie.id)}/>
               <p>{movie.description}</p>
             </div>
           )
