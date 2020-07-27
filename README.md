@@ -1,4 +1,4 @@
-# GROUP GIPHY SAGA PROJECT
+# MOVIE SAGAS PROJECT
 
 ## Description
 
