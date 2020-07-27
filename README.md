@@ -6,10 +6,6 @@ _Duration: Weekend_
 
 This application allows users to view a series of movies from the database.  Users can click on a movie image to see further details about the movie including genres etc.  Users also have the option to edit the movie titles and descriptions in the database.
 
-## Example GIF
-
-![Overview](public/images/example.gif)
-
 ## Setup
 
 1. Run the query from the database.sql file to create a new database and table. values are included if you want to use the images included with the project.
